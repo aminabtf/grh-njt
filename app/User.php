@@ -16,7 +16,34 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name',
+        'last_name',
+        'birthday',
+        'gender',
+        'nationality',
+        'family_situation',
+        'cin',
+        'passeport_number',
+        'passeport_end_date',
+        'current_adress',
+        'permanenet_adress',
+        'phone_number',
+        'postal_code',
+        'home_phone',
+        'mobile',
+        'work_phone',
+        'work_email',
+        'city',
+        'region',
+        'email',
+        'password',
+        'country',
+        'emergency_contact_name',
+        'emergency_contact_mobile',
+        'emergency_contact_fix',
+        'emergency_contact_adress',
+        'emergency_contact_relationship'
+
     ];
 
     /**
@@ -36,4 +63,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * primary key of users table
+     * @var string
+     */
+    protected $primarykey = "id";
+
+
+    /**
+     * the name of the table users
+     * @var string
+     */
+    protected $table = "users";
+
+
+    public function unity()
+    {
+        return $this->hasOne('App\Unity');
+    }
+
+
+
+
 }
