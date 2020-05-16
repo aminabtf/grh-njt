@@ -30,6 +30,6 @@ class Spending extends Model
     protected $table = "spendings";
 
     public function user(){
-        return $this->hasMany('App\User');
+        return $this->hasMany('App\User','foreign_key');
     }
 }

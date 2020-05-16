@@ -28,6 +28,6 @@ class HoursOff extends Model
     protected $table = "hours_off";
 
     public function user(){
-        return $this->hasMany('App\User');
+        return $this->hasMany('App\User','foreign_key');
     }
 }

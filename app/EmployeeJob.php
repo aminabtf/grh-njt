@@ -15,9 +15,9 @@ class EmployeeJob extends Model
     protected $table = "employee_jobs";
 
     public function user(){
-        return $this->hasMany('App\User');
+        return $this->hasMany('App\User','foreign_key');
     }
     public function job(){
-        return $this->hasMany('App\Job');
+        return $this->hasMany('App\Job','foreign_key');
     }
 }

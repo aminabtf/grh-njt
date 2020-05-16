@@ -28,10 +28,10 @@ class Child extends Model
     protected $table = "childs";
 
     public function user(){
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User','foreign_key');
     }
 
     public function school_certificate(){
-        return $this->hasMany('App\SchoolCertificate');
+        return $this->hasMany('App\SchoolCertificate','foreign_key');
     }
 }

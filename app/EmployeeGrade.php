@@ -15,9 +15,9 @@ class EmployeeGrade extends Model
     protected $table = "employee_grades";
 
     public function user(){
-        return $this->hasMany('App\User');
+        return $this->hasMany('App\User','foreign_key');
     }
     public function grade(){
-        return $this->hasMany('App\Grade');
+        return $this->hasMany('App\Grade','foreign_key');
     }
 }

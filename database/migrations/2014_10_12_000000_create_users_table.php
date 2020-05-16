@@ -15,7 +15,6 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('unity_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->date('birthday');
@@ -28,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->text('current_adress');
             $table->text('permanent_adress');
             $table->string('phone_number');
-            $table->int('postal_code');
+            $table->integer('postal_code');
             $table->string('home_phone');
             $table->string('mobile');
             $table->string('work_phone');

@@ -26,6 +26,6 @@ class Contract extends Model
     ];
 
     public function user(){
-        return $this->hasOne('App\user');
+        return $this->belongsTo('App\user','foreign_key');
     }
 }

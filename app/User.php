@@ -80,7 +80,7 @@ class User extends Authenticatable
 
     public function unity()
     {
-        return $this->hasOne('App\Unity');
+        return $this->belongsTo('App\Unity','foreign_key');
     }
 
 

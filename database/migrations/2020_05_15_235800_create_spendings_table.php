@@ -18,9 +18,9 @@ class CreateSpendingsTable extends Migration
             $table->string('type');
             $table->float('cost');
             $table->string('reason');
-            $table->bool('justified');
+            $table->boolean('justified');
             $table->string('type_of_justification');
-            $table->bool('refundable');
+            $table->boolean('refundable');
             $table->date('date');
             $table->timestamps();
         });

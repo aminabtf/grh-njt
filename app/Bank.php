@@ -29,6 +29,6 @@ class Bank extends Model
     protected $table = "banks";
 
     public function user(){
-        return $this->hasMany('App\User');
+        return $this->hasMany('App\User','foreign_key');
     }
 }

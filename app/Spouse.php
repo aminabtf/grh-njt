@@ -28,6 +28,6 @@ class Spouse extends Model
     protected $table = "spouses";
 
     public function user(){
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User','foreign_key');
     }
 }

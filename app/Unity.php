@@ -25,6 +25,6 @@ class Unity extends Model
     }
 
     public function chief_of_unity(){
-        return $this->hasOne('App\User');
+        return $this->hasOne('App\User','foreign_key');
     }
 }
