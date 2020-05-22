@@ -6,3 +6,8 @@
 .form-control{
     border: 1px solid grey !important;
 }
+
+#login-image{
+    padding: 100px;
+    position: relative;
+}
