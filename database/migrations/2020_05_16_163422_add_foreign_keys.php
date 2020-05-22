@@ -13,14 +13,10 @@ class AddForeignKeys extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('unity_id')->constrained();
-        });
         Schema::table('banks', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained();
         });
         Schema::table('unities', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained();
             $table->foreignId('unity_id')->constrained();
         });
         Schema::table('contracts', function (Blueprint $table) {
@@ -57,6 +53,11 @@ class AddForeignKeys extends Migration
         });
 
         Schema::table('spendings', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained();
+        });
+
+        Schema::table('employee_unities', function (Blueprint $table) {
+            $table->foreignId('unity_id')->constrained();
             $table->foreignId('user_id')->constrained();
         });
     }

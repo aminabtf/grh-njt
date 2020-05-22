@@ -23,8 +23,4 @@ class Unity extends Model
     public function unity_attachement(){
         return $this->hasOne('App\Unity');
     }
-
-    public function chief_of_unity(){
-        return $this->hasOne('App\User','foreign_key');
-    }
 }

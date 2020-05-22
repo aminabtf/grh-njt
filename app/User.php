@@ -26,7 +26,7 @@ class User extends Authenticatable
         'passeport_number',
         'passeport_end_date',
         'current_adress',
-        'permanenet_adress',
+        'permanent_adress',
         'phone_number',
         'postal_code',
         'home_phone',
@@ -76,13 +76,6 @@ class User extends Authenticatable
      * @var string
      */
     protected $table = "users";
-
-
-    public function unity()
-    {
-        return $this->belongsTo('App\Unity','foreign_key');
-    }
-
 
 
 

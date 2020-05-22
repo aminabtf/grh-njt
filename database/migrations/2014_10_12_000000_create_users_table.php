@@ -29,7 +29,6 @@ class CreateUsersTable extends Migration
             $table->string('phone_number');
             $table->integer('postal_code');
             $table->string('home_phone');
-            $table->string('mobile');
             $table->string('work_phone');
             $table->string('work_email');
             $table->string('city');
