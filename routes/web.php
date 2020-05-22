@@ -18,14 +18,17 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 // users routes
 
-Route::post('/user/save', 'UserController@store');
-
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/employees/new', function () {
-        return view('employees.new');
+
+    // employe routes
+    Route::get('/users/newform', function () {
+        return view('users.newform');
     });
+    Route::post('/users/save', 'UserController@store');
 
 });
