@@ -11,3 +11,18 @@
     padding: 100px;
     position: relative;
 }
+
+#logo-sidebar{
+    width: 100%;
+}
+
+.sidebar{
+    z-index: 9999;
+    position: fixed;
+}
+
+.components{
+    padding-left: 15rem;
+    margin-top: 75px;
+
+}

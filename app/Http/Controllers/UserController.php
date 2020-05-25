@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -16,7 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('users.list')->with('users', $users);
     }
 
     /**
@@ -42,7 +45,6 @@ class UserController extends Controller
         $data['passeport_end_date'] = Carbon::createFromFormat('m/d/Y', $request->passeport_end_date)->format('Y-m-d');
         $data['password'] = Hash::make($data['password']);
         $user = User::create($data);
-
     }
 
     /**

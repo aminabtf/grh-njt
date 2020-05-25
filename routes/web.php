@@ -16,19 +16,20 @@ use Illuminate\Support\Facades\Auth;
 
 
 Auth::routes();
-// users routes
-
-
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 
 Route::group(['middleware' => ['auth']], function () {
+
+    //home or dashboard
+    Route::get('/', 'HomeController@index');
+
 
     // employe routes
     Route::get('/users/newform', function () {
         return view('users.newform');
     });
     Route::post('/users/save', 'UserController@store');
+    Route::get('/users/list', 'UserController@index');
 
 });
