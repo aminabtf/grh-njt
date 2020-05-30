@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EmployeeUnity extends Model
 {
-    protected $table= "employee_unity";
+    protected $table= "employee_unities";
 
     protected $primarykey = "id";
 
@@ -16,6 +16,8 @@ class EmployeeUnity extends Model
      * @var array
      */
     protected $fillable = [
+        'unity_id',
+        'user_id',
         'is_chief',
     ];
 

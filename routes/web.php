@@ -26,10 +26,8 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 
     // employe routes
-    Route::get('/users/newform', function () {
-        return view('users.newform');
-    });
-    Route::post('/users/save', 'UserController@store');
+    Route::get('/users/newform','UserController@create');
+    Route::post('/user/save', 'UserController@store');
     Route::get('/users/list', 'UserController@index');
 
 

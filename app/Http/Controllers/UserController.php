@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\EmployeeJob;
+use App\EmployeeUnity;
+use App\Job;
+use App\Unity;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -29,7 +33,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $unities = Unity::all();
+        $jobs = Job::all();
+
+        return view('users.newform')->with('unities', $unities)->with('jobs', $jobs);
+
     }
 
     /**
@@ -40,11 +48,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->except(['unity_id','job_id','assignment_date','is_chief']);
         $data['birthday'] = Carbon::createFromFormat('m/d/Y', $request->birthday)->format('Y-m-d');
         $data['passeport_end_date'] = Carbon::createFromFormat('m/d/Y', $request->passeport_end_date)->format('Y-m-d');
         $data['password'] = Hash::make($data['password']);
         $user = User::create($data);
+
+
+        EmployeeJob::create([
+            'user_id' => $user->id,
+            'job_id' => $request->job_id,
+            'assignment_date' => Carbon::createFromFormat('m/d/Y', $request->assignment_date)->format('Y-m-d')
+        ]);
+
+        EmployeeUnity::create([
+            'unity_id' => $request->unity_id,
+            'user_id' => $user->id,
+            'is_chief'=> false
+        ]);
+
     }
 
     /**

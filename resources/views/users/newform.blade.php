@@ -48,15 +48,48 @@
                                             <option>Single</option>
                                         </select>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <input required type="text" class="form-control" name="phone_number"
-                                            placeholder="Mobile Phone">
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <input required type="text" class="form-control" name="home_phone"
-                                            placeholder="Home Phone">
-                                    </div>
+                                        <div class="col-sm-3">
+                                            <input required type="text" class="form-control" name="phone_number"
+                                                placeholder="Mobile Phone">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input required type="text" class="form-control" name="home_phone"
+                                                placeholder="Home Phone">
+                                        </div>
 
+
+
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <select class="form-control" name="unity_id" required>
+                                            <option value="" disabled selected>Select unity</option>
+                                            @foreach ($unities as $unity)
+                                            <option value="{{$unity->id}}">{{$unity->name}}</option>
+                                                @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <select class="form-control" name="job_id" required>
+                                            <option value="" disabled selected>Select job</option>
+
+                                            @foreach ($jobs as $job)
+                                            <option value="{{$job->id}}">{{$job->name}}</option>
+                                                @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input required id="datepicker2" name="assignment_date" placeholder="Assignement_date" />
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <select class="form-control" name="job_id" required>
+                                            <option value="" disabled selected>is chief</option>
+                                            <option value="true" >yes</option>
+                                            <option value="false" >no</option>
+
+
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6">
@@ -68,6 +101,7 @@
                                             placeholder="Permanent Adress"></textarea>
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-3">
                                         <select required name="country" class="countries order-alpha form-control presel-MA"
@@ -126,11 +160,7 @@
                                             <input required id="datepicker1" name="passeport_end_date" placeholder="passeport end date" />
                                         </div>
                                     </div>
-                                    <div class="form-group row">
 
-
-
-                                    </div>
                                     <hr class="py-3">
 
                                     <h4>Emergency contact : </h2>
