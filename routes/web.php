@@ -29,6 +29,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
     Route::get('/users/newform','UserController@create');
     Route::post('/user/save', 'UserController@store');
     Route::get('/users/list', 'UserController@index');
+    Route::get('/user/detail/{id}', 'UserController@show');
 
 
 

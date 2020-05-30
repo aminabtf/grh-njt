@@ -15,7 +15,7 @@
                         </div>
                         <form class="user" method="POST" action="{{url('/user/save')}}"">
                             {{ csrf_field() }}
-                            <h4>General informations : </h2>
+                            <h4>General informations : </h4>
                                 <div class="form-group row">
                                     <div class="col-sm-3">
                                         <input required type="text" name="first_name" class="form-control"
@@ -126,7 +126,7 @@
                                 </div>
                                 <hr class="py-3">
 
-                                <h4>Extra informations : </h2>
+                                <h4>Extra informations : </h4>
                                     <div class="form-group row">
                                         <div class="col-sm-4">
                                             <input required type="email" name="email" class="form-control"
@@ -163,7 +163,7 @@
 
                                     <hr class="py-3">
 
-                                    <h4>Emergency contact : </h2>
+                                    <h4>Emergency contact : </h4>
                                         <div class="form-group row">
                                             <div class="col-sm-4">
                                                 <input required type="text" class="form-control" name="emergency_contact_name"

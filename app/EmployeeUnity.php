@@ -22,10 +22,10 @@ class EmployeeUnity extends Model
     ];
 
     public function unity(){
-        return $this->hasMany('App\Unity');
+        return $this->belongsToMany('App\Unity');
     }
 
     public function user(){
-        return $this->hasMany('App\User');
+        return $this->belongsToMany('App\User');
     }
 }

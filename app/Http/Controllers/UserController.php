@@ -20,9 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')
-        ->leftJoin('employee_unities', 'users.id', '=', 'user_id')
-        ->leftJoin('unities', 'employee_unities.unity_id', '=', 'unity_id')->get();
+        $users = User::all();
 
         return view('users.list')->with('users', $users);
     }
@@ -69,7 +67,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+
+        return view("users.details")->with("user", $user);
     }
 
     /**
