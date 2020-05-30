@@ -16,7 +16,7 @@ class Unity extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'unity_name',
         'hierarchic_level'
     ];
 

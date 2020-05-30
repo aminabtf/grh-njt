@@ -18,7 +18,7 @@
 
                                 <div class="form-group row">
                                     <div class="col-sm-4">
-                                        <input required type="text" name="name" class="form-control"
+                                        <input required type="text" name="unity_name" class="form-control"
                                             placeholder="Name">
                                     </div>
                                     <div class="col-sm-4">

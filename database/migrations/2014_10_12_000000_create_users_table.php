@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('nationality');
             $table->string('family_situation');
             $table->string('cin');
+            $table->string('job');
+            $table->date('assignment_date');
             $table->string('passeport_number');
             $table->date('passeport_end_date');
             $table->text('current_adress');

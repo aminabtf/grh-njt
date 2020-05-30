@@ -39,9 +39,4 @@ Route::get('/logout', 'Auth\LoginController@logout');
     Route::get('/unities/newform', 'UnityController@index');
 
 
-    // jobs routes
-    Route::get('/jobs/newform', function () {
-        return view('jobs.newform');
-    });
-    Route::post('/job/save', 'JobController@store');
 //});

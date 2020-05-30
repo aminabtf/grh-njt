@@ -65,27 +65,27 @@
                                         <select class="form-control" name="unity_id" required>
                                             <option value="" disabled selected>Select unity</option>
                                             @foreach ($unities as $unity)
-                                            <option value="{{$unity->id}}">{{$unity->name}}</option>
+                                            <option value="{{$unity->id}}">{{$unity->unity_name}}</option>
                                                 @endforeach
                                         </select>
                                     </div>
                                     <div class="col-sm-3">
-                                        <select class="form-control" name="job_id" required>
+                                        <select class="form-control" name="job" required>
                                             <option value="" disabled selected>Select job</option>
-
-                                            @foreach ($jobs as $job)
-                                            <option value="{{$job->id}}">{{$job->name}}</option>
-                                                @endforeach
+                                            <option value="enginerr" >enginerr</option>
+                                            <option value="director" >director</option>
+                                            <option value="technical" >technical</option>
+                                            <option value="secretary" >secretary</option>
                                         </select>
                                     </div>
                                     <div class="col-sm-3">
-                                        <input required id="datepicker2" name="assignment_date" placeholder="Assignement_date" />
+                                        <input required id="datepicker2" name="assignment_date" placeholder="Assignement date" />
                                     </div>
                                     <div class="col-sm-3">
-                                        <select class="form-control" name="job_id" required>
+                                        <select class="form-control" name="is_chief" required>
                                             <option value="" disabled selected>is chief</option>
-                                            <option value="true" >yes</option>
-                                            <option value="false" >no</option>
+                                            <option value="1" >yes</option>
+                                            <option value="0" >no</option>
 
 
                                         </select>

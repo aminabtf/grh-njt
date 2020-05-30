@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\EmployeeJob;
 use App\EmployeeUnity;
-use App\Job;
 use App\Unity;
 use App\User;
 use Carbon\Carbon;
@@ -21,7 +20,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = DB::table('users')
+        ->leftJoin('employee_unities', 'users.id', '=', 'user_id')
+        ->leftJoin('unities', 'employee_unities.unity_id', '=', 'unity_id')->get();
 
         return view('users.list')->with('users', $users);
     }
@@ -34,10 +35,8 @@ class UserController extends Controller
     public function create()
     {
         $unities = Unity::all();
-        $jobs = Job::all();
 
-        return view('users.newform')->with('unities', $unities)->with('jobs', $jobs);
-
+        return view('users.newform')->with('unities', $unities);
     }
 
     /**
@@ -48,25 +47,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['unity_id','job_id','assignment_date','is_chief']);
+        $data = $request->except(['unity_id', 'is_chief']);
         $data['birthday'] = Carbon::createFromFormat('m/d/Y', $request->birthday)->format('Y-m-d');
         $data['passeport_end_date'] = Carbon::createFromFormat('m/d/Y', $request->passeport_end_date)->format('Y-m-d');
+        $data['assignment_date'] = Carbon::createFromFormat('m/d/Y', $request->assignment_date)->format('Y-m-d');
         $data['password'] = Hash::make($data['password']);
         $user = User::create($data);
-
-
-        EmployeeJob::create([
-            'user_id' => $user->id,
-            'job_id' => $request->job_id,
-            'assignment_date' => Carbon::createFromFormat('m/d/Y', $request->assignment_date)->format('Y-m-d')
-        ]);
 
         EmployeeUnity::create([
             'unity_id' => $request->unity_id,
             'user_id' => $user->id,
-            'is_chief'=> false
+            'is_chief' => $request->is_chief,
         ]);
-
     }
 
     /**

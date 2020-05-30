@@ -41,7 +41,7 @@ class UnityController extends Controller
 
         $unity_id=DB::table('unities')->insertGetId([
 
-            'name'=>$request->name,
+            'unity_name'=>$request->unity_name,
             'hierarchic_level'=>$request->hierarchic_level,
           ]);
 

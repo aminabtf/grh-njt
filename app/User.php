@@ -23,6 +23,8 @@ class User extends Authenticatable
         'nationality',
         'family_situation',
         'cin',
+        'job',
+        'assignment_date',
         'passeport_number',
         'passeport_end_date',
         'current_adress',

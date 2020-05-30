@@ -12,10 +12,10 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>full name</th>
+                  <th>First name</th>
+                  <th>Last name</th>
                   <th>job</th>
                   <th>unity</th>
-                  <th>chief</th>
                   <th>Phone</th>
                   <th>Actions</th>
                 </tr>
@@ -23,10 +23,10 @@
               <tbody>
                   @foreach ($users as $user)
                   <tr>
-                  <td>{{$user->first_name}} {{$user->last_name}}</td>
+                  <td>{{$user->first_name}} </td>
+                  <td>{{$user->last_name}}</td>
                   <td>{{$user->job}}</td>
-                  <td>{{$user->unity}}</td>
-                  <td>{{$user->chief}}</td>
+                  <td>{{$user->unity_name}}</td>
                   <td>{{$user->phone_number}}</td>
                   <td>test</td>
                   </tr>

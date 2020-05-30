@@ -44,10 +44,6 @@ class AddForeignKeys extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('grade_id')->constrained();
         });
-        Schema::table('employee_jobs', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('job_id')->constrained();
-        });
 
         Schema::table('spendings', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained();
