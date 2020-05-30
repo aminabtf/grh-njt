@@ -16,9 +16,6 @@ class AddForeignKeys extends Migration
         Schema::table('banks', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained();
         });
-        Schema::table('unities', function (Blueprint $table) {
-            $table->foreignId('unity_id')->constrained();
-        });
         Schema::table('contracts', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained();
         });

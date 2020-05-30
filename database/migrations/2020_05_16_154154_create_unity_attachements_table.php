@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUnitiesTable extends Migration
+class CreateUnityAttachementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUnitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('unities', function (Blueprint $table) {
+        Schema::create('unity_attachements', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('hierarchic_level');
+            $table->integer('unity');
+            $table->integer('unity_attachement');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateUnitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unities');
+        Schema::dropIfExists('unity_attachements');
     }
 }
