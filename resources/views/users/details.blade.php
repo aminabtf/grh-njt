@@ -9,9 +9,9 @@
             <!-- Nested Row within Card Body -->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="p-5">
+                    <div>
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Employee  : {{$user->last_name}}  : {{$user->first_name}} </h1>
+                            <h1 class="h4 text-gray-900 mb-4">Employee   {{$user->last_name}}  {{$user->first_name}} </h1>
                         </div>
 
                         <hr>
@@ -30,7 +30,7 @@
                     <div class="col-md-2">CIN </div>
                     <div class="col-md-4"> : {{$user->cin}}</div>
                     <div class="col-md-2">Birthday :</div>
-                    <div class="col-md-4"> : {{$user->birthday}}</div>
+                    <div class="col-md-4"> : {{date('d F Y', strtotime($user->birthday))}}</div>
                 </div>
                 <div class="row form-group ">
                     <div class="col-md-2">Family Situation </div>
@@ -51,8 +51,10 @@
                     <div class="col-md-4"> : {{$user->job}}</div>
                 </div>
                 <div class="row form-group ">
+                    <div class="col-md-2">Unity</div>
+                    <div class="col-md-4"> : {{$user->unity_name}}</div>
                     <div class="col-md-2">Assignment date</div>
-                    <div class="col-md-4"> : {{$user->assignment_date}}</div>
+                    <div class="col-md-4"> : {{date('d F Y', strtotime($user->assignment_date))}}</div>
                 </div>
                 <div class="row form-group ">
                     <div class="col-md-2">Current Adress</div>
@@ -86,7 +88,7 @@
                 </div>
                 <div class="row form-group ">
                     <div class="col-md-2">Passeport End date</div>
-                    <div class="col-md-4"> : {{$user->passeport_end_date}}</div>
+                    <div class="col-md-4"> : {{date('d F Y', strtotime($user->passeport_end_date))}}</div>
                 </div>
                 <hr>
                 <h4>Emergency Contact</h4>

@@ -15,6 +15,7 @@
                             <th>First name</th>
                             <th>Last name</th>
                             <th>job</th>
+                            <th>unity</th>
                             <th>Phone</th>
                             <th>Actions</th>
                         </tr>
@@ -25,6 +26,7 @@
                             <td>{{$user->first_name}} </td>
                             <td>{{$user->last_name}}</td>
                             <td>{{$user->job}}</td>
+                            <td>{{$user->unity_name}}</td>
                             <td>{{$user->phone_number}}</td>
                             <td>
                                 <a href="{{url("/user/detail/$user->id")}}"><i class="btn btn-info fa fa-info-circle" aria-hidden="true"></i></a>
